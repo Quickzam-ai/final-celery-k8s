@@ -37,7 +37,6 @@ spec:
               value: redis://redis:6379/0
           image: chitramai/kube-celery-dev-fork_flower 
           name: flower
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5555
           resources: {}
