@@ -49,16 +49,21 @@ status: {}
 ---
 apiVersion: v1
 kind: Service
-metadata: 
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o deployments/
+    kompose.version: 1.27.0 (b0ed6a2c9)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: flask-application
   name: flask-application
-  labels: 
-    name: celery-flask
-    app: celery-worker-app
-spec: 
+spec:
   type: NodePort
-  ports: 
-  - port: 5005
-    targetPort: 5005
-    nodePort: 30000
-  selector: 
-    name: flask-application
+  ports:
+    - name: "5000"
+      port: 5000
+      targetPort: 5000
+  selector:
+    io.kompose.service: flask-application
+status:
+  loadBalancer: {}
