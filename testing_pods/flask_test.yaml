@@ -48,8 +48,8 @@ spec:
   type: LoadBalancer
   ports: 
     - name: "5000"
-      port: 8765
-      nodePort: 5000
+      port: 5000
+      nodePort: 30013
   selector: 
     name: flask-application-deployment
     app: celery-worker
