@@ -15,7 +15,7 @@ spec:
     metadata:
       name: redis-pod
       labels:
-        name: redis-pod
+        name: redis-deploy
         app: demo-voting-app
     spec:
       containers:
@@ -37,5 +37,5 @@ spec:
   - port: 6379
     targetPort: 6379
   selector:
-    name: redis-pod
+    name: redis-deploy
     app: demo-voting-app
