@@ -19,7 +19,7 @@ spec:
         app: celery-worker
     spec: 
       containers: 
-      - name: celery-worker-app
+      - name: celery
         image: chitramai/kube-celery-dev-fork_celery_worker
         args:
           - celery
@@ -37,7 +37,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata: 
-  name: celery-service
+  name: celery
   labels:   
     name: celery-pod-service
 spec: 
