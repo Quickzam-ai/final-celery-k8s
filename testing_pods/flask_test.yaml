@@ -59,3 +59,20 @@ spec:
 # Command: Go to the docker container: 
 ## kubectl get pod  -> grab the pood name 
 ## kubectl exec <pod-name> -it -- /bin/sh -> it will open a command line, we can see what are all the things inside the docker image. 
+
+
+#apiVersion: v1
+#kind: Service
+#metadata: 
+#  name: flask-service
+#  labels: 
+#    name: flask-pod-service
+#spec: 
+#  type: LoadBalancer
+#  ports: 
+#    - name: "5000"
+#      port: 5000
+#      nodePort: 30009
+#  selector: 
+#    name: flask-application-deployment
+#    app: celery-worker
